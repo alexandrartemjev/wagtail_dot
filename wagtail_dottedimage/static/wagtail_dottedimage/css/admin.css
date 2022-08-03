@@ -1,0 +1,81 @@
+.dots-canvas {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.dots-canvas img {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.depot-map-dot {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin: -10px;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  background: url("/static/wagtail_dottedimage/img/dot.png");
+  background-size: contain;
+  overflow: visible;
+  z-index: 1;
+}
+
+.depot-map-dot:hover,
+.depot-map-dot:active {
+  color: white;
+  /*background: red;*/
+  cursor: -webkit-grab;
+}
+
+.depot-map-dot:active {
+  cursor: crosshair;
+}
+
+.depot-map-dot:hover .depot-map-dot-title,
+.depot-map-dot:active .depot-map-dot-title {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.depot-map-dot-title {
+  position: absolute;
+  bottom: 65px;
+  left: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 200px;
+  padding: 5px;
+  margin: 0 -100px;
+  font: 400 normal 14px/16px sans-serif;
+  text-transform: none;
+  white-space: normal;
+  color: white;
+  background: dodgerblue;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-10%);
+  transition: visibility .2s ease-out, opacity .2s ease-out, transform .2s ease-out;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.depot-map-dot-title::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  display: block;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0 -10px;
+  border: 10px solid transparent;
+  border-top-color: dodgerblue;
+}

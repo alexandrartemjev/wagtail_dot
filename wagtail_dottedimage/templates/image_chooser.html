@@ -1,0 +1,17 @@
+{% extends "wagtailadmin/widgets/chooser.html" %}
+{% load wagtailimages_tags %}
+{#{{ children.values }}#}
+{% block chooser_class %}big-image-chooser{% endblock %}
+{% block chooser_attributes %}data-chooser-url="{% url "wagtailimages:chooser" %}"{% endblock %}
+{% block chosen_state_view %}
+
+    <div class="preview-image dots-canvas js-dots-canvas js-init-dots-canvas" data-contentpath="asd">
+        {% if image %}
+            {% image image width-1140 %}
+        {% else %}
+            <img>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block edit_chosen_item_url %}{% if image %}{% url 'wagtailimages:edit' image.id %}{% endif %}{% endblock %}
