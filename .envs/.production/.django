@@ -1,0 +1,38 @@
+# General
+# ------------------------------------------------------------------------------
+# DJANGO_READ_DOT_ENV_FILE=True
+DJANGO_SETTINGS_MODULE=config.settings.production
+DJANGO_SECRET_KEY=Movni1seB6rQTQ621TX1Vj8qRJUBmElzMefC8gmTku9Nl2B2ZmoCrE9jSPgO2PON
+DJANGO_ADMIN_URL=3v2oLXCOnetwiiux8M5xpLFFLzmxLluS/
+DJANGO_ALLOWED_HOSTS=.example.com
+
+# Wagtail
+# ------------------------------------------------------------------------------
+WAGTAIL_ADMIN_URL=nMTmGMc2eYbiNNOaEERGSHFR9K58MAzV/
+
+# Security
+# ------------------------------------------------------------------------------
+# TIP: better off using DNS, however, redirect is OK too
+DJANGO_SECURE_SSL_REDIRECT=False
+
+# Email
+# ------------------------------------------------------------------------------
+DJANGO_SERVER_EMAIL=
+
+MAILGUN_API_KEY=
+MAILGUN_DOMAIN=
+
+
+# django-allauth
+# ------------------------------------------------------------------------------
+DJANGO_ACCOUNT_ALLOW_REGISTRATION=True
+
+# Gunicorn
+# ------------------------------------------------------------------------------
+WEB_CONCURRENCY=4
+
+
+# Redis
+# ------------------------------------------------------------------------------
+REDIS_URL=redis://redis:6379/0
+
